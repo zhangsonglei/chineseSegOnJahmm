@@ -32,21 +32,14 @@ public class SegWithHMM {
 		FileInputStream in = new FileInputStream(new File(txtPath));
 		BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));
 		String line = "";
-		
-		bw.write(CorpusFactory.observerList.size()+">>>"+CorpusFactory.observerList.toString());
-		bw.newLine();
-		bw.flush();
-		
+
 		while ((line = br.readLine()) != null) {
 			String tokens = line.trim();
 			bw.write(seg(tokens));
 			bw.newLine();
 			bw.flush();
 		}
-		
-		bw.write(CorpusFactory.observerList.size()+">>>"+CorpusFactory.observerList.toString());
-		bw.newLine();
-		bw.flush();
+
 	}
 
 	
